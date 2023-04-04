@@ -1,27 +1,21 @@
-\pgfmathsetmacro\CosA{cos(32)}
-\pgfmathsetmacro\CosB{cos(150)}
-\pgfmathsetmacro\CosC{cos(243)}
-\pgfmathsetmacro\CosD{cos(345)}
-\pgfmathsetmacro\SomadoA{cos(345)+cos(150)}
-\pgfmathsetmacro\SomadoB{(sqrt(6)+sqrt(2)-2*sqrt(3))/4}
-
+\newcommand{\bob}[1]{\pgfmathparse{#1}\num{\pgfmathresult}}
 
 \begin{frame}{Exercício 17}
     \begin{itemize}
         \item Usando uma calculadora, temos que
             \begin{align*}
-                \cos{\SI{32}{\degree}} &= \num{\CosA} \\
-                \cos{\SI{150}{\degree}} &= \num{\CosB} \\
-                \cos{\SI{243}{\degree}} &= \num{\CosC} \\
-                \cos{\SI{345}{\degree}} &= \num{\CosD}
+                \cos{\SI{32}{\degree}} &= \bob{cos(32)}\\
+                \cos{\SI{150}{\degree}} &= \bob{cos(150)}\\
+                \cos{\SI{243}{\degree}} &= \bob{cos(243)}\\
+                \cos{\SI{345}{\degree}} &= \bob{cos(345)}
             \end{align*}
         \item Ou seja, \(x=\cos{\SI{345}{\degree}}\) e \(y=\cos{\SI{150}{\degree}}\)
         \item Assim, 
             \[
                 x+y=
                 \begin{cases}
-                    \num{\CosD} \num{\CosB} = \num{\SomadoA} \qquad &\text{resultado obtido usando calculadora}\\
-                    \dfrac{\sqrt{6}+\sqrt{2}-2\sqrt{3}}{4} \approx \num{\SomadoB} \qquad &\text{resultado obtido em sala de aula}
+                    \bob{cos(345)}-\bob{-cos(150)} = \bob{cos(345)+cos(150)} \qquad &\text{resultado obtido usando calculadora}\\
+                    \dfrac{\sqrt{6}+\sqrt{2}-2\sqrt{3}}{4} \approx \bob{(sqrt(6)+sqrt(2)-2*sqrt(3))/4} \qquad &\text{resultado obtido em sala de aula}
                 \end{cases}
             \]
     \end{itemize}
