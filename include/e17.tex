@@ -1,4 +1,5 @@
-\newcommand{\bob}[1]{\pgfmathparse{#1}\num{\pgfmathresult}}
+\tikzset{fixed point arithmetic}
+\newcommand{\bob}[1]{\pgfmathparse{#1}\pgfmathprintnumber[use comma, precision=6]{\pgfmathresult}}
 
 \begin{frame}{Exercício 17}
     \begin{itemize}
@@ -7,7 +8,7 @@
                 \cos{\SI{32}{\degree}} &= \bob{cos(32)}\\
                 \cos{\SI{150}{\degree}} &= \bob{cos(150)}\\
                 \cos{\SI{243}{\degree}} &= \bob{cos(243)}\\
-                \cos{\SI{345}{\degree}} &= \bob{cos(345)}
+                \cos{\SI{345}{\degree}} &= \bob{cos(345)} 
             \end{align*}
         \item Ou seja, \(x=\cos{\SI{345}{\degree}}\) e \(y=\cos{\SI{150}{\degree}}\)
         \item Assim, 
